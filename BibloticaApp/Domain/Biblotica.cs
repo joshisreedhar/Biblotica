@@ -13,8 +13,8 @@ namespace Thoughtworks.Pathshala.Domain
 		public void Start()
 		{
 			_books = new List<Book> ();
-			_books.Add(new Book ("Object Thinking"));
-			_books.Add(new Book ("Cakes, Puddings + Category Theory"));
+			_books.Add(new Book ("Object Thinking","Dr.David West",1990));
+			_books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015));
 			if (Init != null) {
 				Init(this,new MessageEventArgs(new Message("Welcome")));
 			}

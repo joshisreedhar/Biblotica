@@ -5,22 +5,18 @@ namespace Thoughtworks.Pathshala.Domain
 	public class Book
 	{
 		private string _name;
-		public Book (string name)
+		private string _author;
+		private int _year;
+		public Book (string name, string author, int year)
 		{
 			_name = name;
-		}
-
-		public string Name
-		{
-			get
-			{
-				return _name;
-			}
+			_author = author;
+			_year = year;
 		}
 
 		public override string ToString ()
 		{
-			return string.Format ("[Book: Name={0}]", Name);
+			return string.Format ("[Book: Name={0}, Author={1}, Year={2}]", _name, _author, _year);
 		}
 	}
 }
