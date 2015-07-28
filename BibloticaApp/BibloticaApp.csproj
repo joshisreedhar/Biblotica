@@ -41,6 +41,8 @@
     <Compile Include="Application.cs" />
     <Compile Include="Domain\Book.cs" />
     <Compile Include="Domain\ListCommand.cs" />
+    <Compile Include="Domain\ICommand.cs" />
+    <Compile Include="Domain\InputParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

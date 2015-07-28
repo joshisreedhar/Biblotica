@@ -2,7 +2,7 @@
 
 namespace Thoughtworks.Pathshala.Domain
 {
-	public class ListCommand
+	public class ListCommand: ICommand
 	{
 		Biblotica _biblotica;
 

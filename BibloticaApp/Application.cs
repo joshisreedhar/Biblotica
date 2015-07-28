@@ -15,14 +15,19 @@ namespace Thoughtworks.Pathshala
 			books.Add(new Book ("Object Thinking","Dr.David West",1990));
 			books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015));
 			app.Start (books);
+			InputParser parser = new InputParser (app);
 			while(true)
 			{
 				
 				Console.WriteLine ("Input:");
-				new ListCommand (app).Execute();
 				string input = Console.ReadLine ();
-
-
+				try{
+				ICommand command = parser.Parse (input);
+				command.Execute();
+				}
+				catch(InvalidOperationException) {
+					Console.WriteLine ("Select a valid option!");
+				}
 			}
 
 		}
