@@ -34,10 +34,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
     <Compile Include="BibloticaTests.cs" />
     <Compile Include="MessageTests.cs" />
     <Compile Include="MessageEventArgsTests.cs" />
+    <Compile Include="BookTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

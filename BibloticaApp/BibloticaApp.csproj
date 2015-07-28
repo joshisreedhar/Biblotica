@@ -39,6 +39,7 @@
     <Compile Include="Domain\Message.cs" />
     <Compile Include="Domain\MessageEventArgs.cs" />
     <Compile Include="Application.cs" />
+    <Compile Include="Domain\Book.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

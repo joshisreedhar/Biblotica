@@ -10,6 +10,10 @@ namespace Thoughtworks.Pathshala
 			Biblotica app = new Biblotica ();
 			app.Init += new MessageEventHandler (WriteEventToConsole);
 			app.Start ();
+			foreach (Book book in app.GetBookList()) {
+				Console.WriteLine (book.ToString ());
+			}
+
 		}
 
 		private void WriteEventToConsole(object sender, MessageEventArgs e)
