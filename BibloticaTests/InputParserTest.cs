@@ -11,10 +11,20 @@ namespace Thoughtworks.Pathshala.Tests
 		public void InputParser_Should_Parse_Input_To_Generate_Commad ()
 		{
 			InputParser parser = new InputParser (new Biblotica());
-			ICommand command = parser.Parse ("List");
+			ICommand command = parser.Parse ("list");
 
 			Assert.IsInstanceOf<ListCommand> (command);
 		}
+
+		[Test]
+		public void InputParser_Should_Parse_Input_To_Generate_exit_Commad ()
+		{
+			InputParser parser = new InputParser (new Biblotica());
+			ICommand command = parser.Parse ("exit");
+
+			Assert.IsInstanceOf<ExitCommand> (command);
+		}
+
 	}
 }
 

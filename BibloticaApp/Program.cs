@@ -7,7 +7,7 @@ namespace Thoughtworks.Pathshala
 		public static void Main (string[] args)
 		{
 			Application app = new Application ();
-			Console.Read ();
+
 		}
 
 

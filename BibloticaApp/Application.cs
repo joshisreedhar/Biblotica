@@ -6,17 +6,20 @@ namespace Thoughtworks.Pathshala
 {
 	public class Application
 	{
+		bool _shouldContinue;
 		public Application ()
 		{
 			Biblotica app = new Biblotica ();
 			app.Init += new MessageEventHandler (WriteEventMessageToConsole);
 			app.Read += new MessageEventHandler (WriteBookDataToConsole);
+			app.Exit += new MessageEventHandler (HandleExitComand);
 			List<Book> books = new List<Book> (); 
 			books.Add(new Book ("Object Thinking","Dr.David West",1990));
 			books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015));
 			app.Start (books);
 			InputParser parser = new InputParser (app);
-			while(true)
+			_shouldContinue = true;
+			while(_shouldContinue)
 			{
 				
 				Console.WriteLine ("Input:");
@@ -29,6 +32,8 @@ namespace Thoughtworks.Pathshala
 					Console.WriteLine ("Select a valid option!");
 				}
 			}
+			Console.Write ("Application Existing");
+
 
 		}
 
@@ -43,6 +48,11 @@ namespace Thoughtworks.Pathshala
 			foreach (Book book in books) {
 				Console.WriteLine (book.ToString ());
 			}
+		}
+
+		private void HandleExitComand(object sender, MessageEventArgs e)
+		{
+			_shouldContinue = false;
 		}
 
 	}

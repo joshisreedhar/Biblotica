@@ -10,6 +10,8 @@ namespace Thoughtworks.Pathshala.Domain
 		private List<Book> _books;
 		public event MessageEventHandler Init;
 		public event MessageEventHandler Read;
+		public event MessageEventHandler Exit;
+
 
 		public void Start(List<Book> books)
 		{
@@ -28,6 +30,15 @@ namespace Thoughtworks.Pathshala.Domain
 					
 			}
 			return _books;
+		}
+
+		public void Quit()
+		{
+			if (Exit != null) {
+				Message message = new Message ("Exit");
+				Exit (this, new MessageEventArgs (message));
+
+			}
 		}
 	}
 }

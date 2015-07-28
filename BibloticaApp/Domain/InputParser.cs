@@ -12,9 +12,10 @@ namespace Thoughtworks.Pathshala.Domain
 		public ICommand Parse(string commandText)
 		{
 			switch (commandText) {
-			case "List":
+			case "list":
 				return new ListCommand (_biblotica);
-				break;
+			case "exit":
+				return new ExitCommand (_biblotica);
 			default:
 				throw new InvalidOperationException ();
 			}

@@ -30,11 +30,24 @@ namespace Thoughtworks.Pathshala.Tests
 			Assert.AreEqual (1, books.Count );
 		}
 
+		[Test]
+		public void Biblotica_When_Close_Shold_Notify_Exit()
+		{
+			Biblotica biblotica = new Biblotica ();
+			biblotica.Exit += new MessageEventHandler (CheckExitMessage);
+
+		}
+
 
 
 		private void CheckMessage(object sender, MessageEventArgs e)
 		{
 			Assert.AreEqual ("Welcome", e.Message.Text);
+		}
+
+		private void CheckExitMessage(object sender, MessageEventArgs e)
+		{
+			Assert.AreEqual ("Exit", e.Message.Text);
 		}
 
 
