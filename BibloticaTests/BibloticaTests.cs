@@ -14,20 +14,23 @@ namespace Thoughtworks.Pathshala.Tests
 			Biblotica biblotica = new Biblotica ();
 			biblotica.Init += new MessageEventHandler (CheckMessage);
 		
-			biblotica.Start ();
+			biblotica.Start (new List<Book>());
 
 		}
 
 		[Test]
-		public void Biblotica_When_Started_Should_Contain_Books()
+		public void Biblotica_When_Requested_For_BooksList_Should_Contain_Books()
 		{
 			Biblotica biblotica = new Biblotica ();
 			biblotica.Init += new MessageEventHandler (CheckMessage);
 
-			biblotica.Start ();
+			biblotica.Start (new List<Book>(){new Book("a","a",1990)});
+
 			List<Book> books =  biblotica.GetBookList ();
-			Assert.IsTrue (books.Count > 0);
+			Assert.AreEqual (1, books.Count );
 		}
+
+
 
 		private void CheckMessage(object sender, MessageEventArgs e)
 		{

@@ -9,12 +9,11 @@ namespace Thoughtworks.Pathshala.Domain
 	{
 		private List<Book> _books;
 		public event MessageEventHandler Init;
-	
-		public void Start()
+		public event MessageEventHandler Read;
+
+		public void Start(List<Book> books)
 		{
-			_books = new List<Book> ();
-			_books.Add(new Book ("Object Thinking","Dr.David West",1990));
-			_books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015));
+			_books = books ;
 			if (Init != null) {
 				Init(this,new MessageEventArgs(new Message("Welcome")));
 			}
@@ -22,6 +21,12 @@ namespace Thoughtworks.Pathshala.Domain
 
 		public List<Book> GetBookList ()
 		{
+			if (Read != null) {
+				Message message = new Message ("Read");
+				message.Data = _books;
+				Read (this, new MessageEventArgs (message));
+					
+			}
 			return _books;
 		}
 	}
