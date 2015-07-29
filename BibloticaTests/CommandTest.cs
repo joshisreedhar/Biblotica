@@ -12,7 +12,7 @@ namespace Thoughtworks.Pathshala.Tests
 		[Test]
 		public void List_Command_Should_List_The_Books_In_Library ()
 		{
-			Biblotica biblotica = new Biblotica (new List<Book>(){new Book("A","a",1990)});
+			Biblotica biblotica = new Biblotica (new List<Book>(){new Book("A","a",1990,"ISBN1990")});
 			ListCommand command = new ListCommand (biblotica);
 			CommandResult result = command.Execute ();
 			List<Book> books = result.Data as List<Book>;

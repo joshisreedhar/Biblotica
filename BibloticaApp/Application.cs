@@ -10,8 +10,8 @@ namespace Thoughtworks.Pathshala
 		public Application ()
 		{
 			List<Book> books = new List<Book> (); 
-			books.Add(new Book ("Object Thinking","Dr.David West",1990));
-			books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015));
+			books.Add(new Book ("Object Thinking","Dr.David West",1990,"ISBN1990"));
+			books.Add(new Book ("Cakes, Puddings + Category Theory","a",2015,"ISBN2015"));
 			Biblotica app = new Biblotica (books);
 			InputParser parser = new InputParser (app);
 			_shouldContinue = true;

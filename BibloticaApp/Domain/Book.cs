@@ -7,11 +7,20 @@ namespace Thoughtworks.Pathshala.Domain
 		private string _name;
 		private string _author;
 		private int _year;
-		public Book (string name, string author, int year)
+		private string _ISBNNUmber;
+
+		public Book (string name, string author, int year, string ISBNNumber)
 		{
 			_name = name;
 			_author = author;
 			_year = year;
+			_ISBNNUmber = ISBNNumber;
+		}
+
+		public string Id {
+			get {
+				return _ISBNNUmber;
+			}
 		}
 
 		public override string ToString ()
