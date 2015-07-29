@@ -5,20 +5,24 @@ namespace Thoughtworks.Pathshala.Domain
 	public class InputParser
 	{
 		Biblotica _biblotica;
-		public InputParser(Biblotica biblotica)
+
+		public InputParser (Biblotica biblotica)
 		{
 			_biblotica = biblotica;
 		}
-		public ICommand Parse(string commandText)
+
+		public ICommand Parse (string commandText)
 		{
-			switch (commandText) {
-			case "start":
+			if (commandText == "start") {
 				return new InitCommand ();
-			case "list":
+			} else if (commandText == "list") {
 				return new ListCommand (_biblotica);
-			case "exit":
+			} else if (commandText == "exit") {
 				return new ExitCommand ();
-			default:
+			} else if (commandText.StartsWith ("checkout")) {
+				string isbnNumber = commandText.Remove (7);
+				return new CheckoutCommand (_biblotica, isbnNumber);
+			} else {
 				return new NullCommand ();
 			}
 		}

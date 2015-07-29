@@ -32,6 +32,15 @@ namespace Thoughtworks.Pathshala.Tests
 			Assert.IsInstanceOf<ExitCommand> (command);
 		}
 
+		[Test]
+		public void InputParser_Should_Parse_Input_To_Generate_Checkout_Commad ()
+		{
+			InputParser parser = new InputParser (_biblotica);
+			ICommand command = parser.Parse ("checkout 123");
+
+			Assert.IsInstanceOf<CheckoutCommand> (command);
+		}
+
 	}
 }
 
