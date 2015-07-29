@@ -35,6 +35,14 @@ namespace Thoughtworks.Pathshala.Tests
 			CommandResult result = command.Execute ();
 			Assert.AreEqual ("Welcome", result.Data);
 		}
+
+		[Test]
+		public void InvalidCommand_Should_Notify_Initialization_With_Welcome_Message ()
+		{
+			NullCommand command = new NullCommand ();
+			CommandResult result = command.Execute ();
+			Assert.AreEqual ("Provide a valid Input!!", result.Data);
+		}
 	}
 }
 

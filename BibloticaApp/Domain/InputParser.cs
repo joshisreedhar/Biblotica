@@ -19,7 +19,7 @@ namespace Thoughtworks.Pathshala.Domain
 			case "exit":
 				return new ExitCommand ();
 			default:
-				throw new InvalidOperationException ();
+				return new NullCommand ();
 			}
 		}
 	}

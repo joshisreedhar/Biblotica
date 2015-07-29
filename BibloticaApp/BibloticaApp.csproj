@@ -46,6 +46,7 @@
     <Compile Include="Domain\InitCommand.cs" />
     <Compile Include="Domain\ConsoleView.cs" />
     <Compile Include="Domain\IView.cs" />
+    <Compile Include="Domain\NullCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
