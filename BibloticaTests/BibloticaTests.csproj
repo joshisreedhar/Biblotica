@@ -35,12 +35,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BibloticaTests.cs" />
-    <Compile Include="MessageTests.cs" />
-    <Compile Include="MessageEventArgsTests.cs" />
     <Compile Include="BookTest.cs" />
-    <Compile Include="ListCommandTest.cs" />
     <Compile Include="InputParserTest.cs" />
-    <Compile Include="ExitCommandTest.cs" />
+    <Compile Include="CommandTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

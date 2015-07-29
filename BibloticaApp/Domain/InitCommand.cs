@@ -2,12 +2,12 @@
 
 namespace Thoughtworks.Pathshala.Domain
 {
-	public class ExitCommand:ICommand
+	public class InitCommand:ICommand
 	{
 		CommandResult _result;
 		public CommandResult Execute()
 		{
-			_result = new CommandResult ("Exit");
+			_result = new CommandResult ("Welcome");
 			return _result;
 		}
 
@@ -17,4 +17,3 @@ namespace Thoughtworks.Pathshala.Domain
 		}
 	}
 }
-
