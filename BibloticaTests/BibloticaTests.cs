@@ -17,12 +17,20 @@ namespace Thoughtworks.Pathshala.Tests
 		}
 
 		[Test]
-		public void Biblotica_When_Checkedout_Should_Not_Be_In_Available_Books()
+		public void Biblotica_When_Book_Is_Checkedout_Should_Not_Be_In_Available_Books()
 		{
 			Biblotica biblotica = new Biblotica (new List<Book>(){new Book("a","a",1990,"ISBN190")});
 			biblotica.Checkout ("ISBN190");
 			List<Book> books =  biblotica.GetBookList ();
 			Assert.AreEqual (0, books.Count );
+		}
+
+		[Test]
+		public void Biblotica_When_A_NonAvailable_Book_Is_Checkedout_Should_Return_Null()
+		{
+			Biblotica biblotica = new Biblotica (new List<Book>(){new Book("a","a",1990,"ISBN190")});
+			Book actual = biblotica.Checkout ("ISBN1900");
+			Assert.IsNull (actual);
 		}
 	}
 }

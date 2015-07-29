@@ -7,7 +7,6 @@ namespace Thoughtworks.Pathshala.Domain
 	public class Biblotica
 	{
 		private List<Book> _availableBooks;
-		private List<Book> _issuedBooks;
 		public Biblotica(List<Book> books)
 		{
 			_availableBooks = books ;
@@ -18,9 +17,11 @@ namespace Thoughtworks.Pathshala.Domain
 			return _availableBooks;
 		}
 
-		public void Checkout(string ISBNNumber)
+		public Book Checkout(string ISBNNumber)
 		{
-			_availableBooks.Remove(_availableBooks.Where(b=>b.Id == ISBNNumber).SingleOrDefault());
+			Book bookToCheckout = _availableBooks.Where (b => b.Id == ISBNNumber).SingleOrDefault ();
+			_availableBooks.Remove(bookToCheckout);
+			return bookToCheckout;
 		}
 	}
 }

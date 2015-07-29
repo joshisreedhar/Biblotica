@@ -38,6 +38,7 @@
     <Compile Include="BookTest.cs" />
     <Compile Include="InputParserTest.cs" />
     <Compile Include="CommandTest.cs" />
+    <Compile Include="MockView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
